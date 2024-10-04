@@ -97,11 +97,13 @@ born in the 1500's.
   the years 1500 and 1599.
 */
 
+// start of ex1
+
 let veryOldInventors = []
 
 // Complete the exercise in the space below:
 
-veryOldInventors = inventors.map((inv) => {
+veryOldInventors = inventors.filter((inv) => {
   return inv.year >= 1500 && inv.year <= 1599
 })
 
@@ -110,4 +112,82 @@ console.log("Exercise 1 my result: ", veryOldInventors)
 console.log("Exercise 1 correct result: ", [
   { first: "Galileo", last: "Galilei", year: 1564, passed: 1642 },
   { first: "Johannes", last: "Kepler", year: 1571, passed: 1630 },
+])
+
+// end of ex1
+
+// start of ex2
+/*
+Exercise 2: Array.prototype.map()
+
+Map the array of inventors into a new array. This new array should only contain
+objects with the inventors' first and last names.
+
+- For each inventor, return an object in this format: 
+  { first: "First Name", last: "Last Name" }.
+- The new array should be a collection of these objects, each representing an 
+  inventor with only their first and last names.
+
+Hint: Return a new object literal from the callback that looks like:
+      { first: "First Name", last: "Last Name" }
+*/
+
+let inventorNames = []
+
+inventorNames = inventors.map((firstAndSecNames) => {
+  return (inventorNames = `first: ${firstAndSecNames.first}, last: ${firstAndSecNames.last}`)
+})
+console.log(inventorNames)
+
+// Complete the exercise in the space below:
+
+// Check your work:
+console.log("Exercise 2 my result: ", inventorNames)
+console.log("Exercise 2 correct result: ", [
+  { first: "Albert", last: "Einstein" },
+  { first: "Isaac", last: "Newton" },
+  { first: "Galileo", last: "Galilei" },
+  { first: "Marie", last: "Curie" },
+  { first: "Johannes", last: "Kepler" },
+  { first: "Nicolaus", last: "Copernicus" },
+  { first: "Max", last: "Planck" },
+  { first: "Katherine", last: "Blodgett" },
+  { first: "Ada", last: "Lovelace" },
+  { first: "Sarah E.", last: "Goode" },
+  { first: "Lise", last: "Meitner" },
+  { first: "Hanna", last: "Hammarström" },
+])
+
+/*
+Exercise 3: Array.prototype.sort()
+
+Sort the inventors by birth date in ascending order (from those born furthest in
+the past to those born most recently).
+*/
+
+let sortedByBirthYear = []
+
+// Complete the exercise in the space below:
+
+sortedByBirthYear = inventors.sort((sortedInv) => {
+  return (sortedByBirthYear = sortedInv.year())
+})
+
+console.log(sortedByBirthYear)
+
+// Check your work:
+console.log("Exercise 3 my result: ", sortedByBirthYear)
+console.log("Exercise 3 correct result: ", [
+  { first: "Nicolaus", last: "Copernicus", year: 1473, passed: 1543 },
+  { first: "Galileo", last: "Galilei", year: 1564, passed: 1642 },
+  { first: "Johannes", last: "Kepler", year: 1571, passed: 1630 },
+  { first: "Isaac", last: "Newton", year: 1643, passed: 1727 },
+  { first: "Ada", last: "Lovelace", year: 1815, passed: 1852 },
+  { first: "Hanna", last: "Hammarström", year: 1829, passed: 1909 },
+  { first: "Sarah E.", last: "Goode", year: 1855, passed: 1905 },
+  { first: "Max", last: "Planck", year: 1858, passed: 1947 },
+  { first: "Marie", last: "Curie", year: 1867, passed: 1934 },
+  { first: "Lise", last: "Meitner", year: 1878, passed: 1968 },
+  { first: "Albert", last: "Einstein", year: 1879, passed: 1955 },
+  { first: "Katherine", last: "Blodgett", year: 1898, passed: 1979 },
 ])
